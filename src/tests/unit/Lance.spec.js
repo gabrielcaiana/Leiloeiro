@@ -42,6 +42,7 @@ describe("Um lance com valor mínimo", () => {
     const lancesEmitidos = wrapper.emitted("novo-lance");
     expect(lancesEmitidos).toHaveLength(1);
   });
+
   test("Emite o valor esperado de um lance válido", () => {
     const wrapper = mount(Lance, {
       propsData: {
@@ -55,6 +56,7 @@ describe("Um lance com valor mínimo", () => {
     const valorDoLance = parseInt(lancesEmitidos[0][0]);
     expect(valorDoLance).toBe(400);
   });
+  
   test("Não aceita lances com valores menores do que o mínimo informado", async () => {
     const wrapper = mount(Lance, {
       propsData: {
